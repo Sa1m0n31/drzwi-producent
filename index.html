@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./mobile.css" />
 </head>
 <body>
 <div class="container">
@@ -38,7 +39,11 @@
                 <img class="img" src="./img/logo.jpg" alt="logo" />
             </a>
 
-            <div class="header__menu flex">
+            <button class="btn btn--menu d-mobile" onclick="openMenu()">
+                <img class="img" src="./img/menu.svg" alt="menu" />
+            </button>
+
+            <div class="header__menu flex d-desktop">
                 <a class="header__menu__item"
                    href="/">
                     Strona główna
@@ -61,7 +66,8 @@
 
     <!-- PAGE -->
     <main class="hero">
-        <img class="img" src="./img/strona-glowna.jpg" alt="drzwi-producent" />
+        <img class="img d-desktop" src="./img/strona-glowna.jpg" alt="drzwi-producent" />
+        <img class="img d-mobile" src="./img/hero-mobile.jpg" alt="drzwi-producent" />
 
         <div class="hero__content w">
             <h1 class="hero__content__header">
@@ -364,10 +370,10 @@
         </h3>
         <div class="flex section__main">
             <figure>
-                <img class="img" src="./img/placeholder-1.jpg" alt="drzwi-producent" />
+                <img class="img" src="./img/placeholder-2.jpg" alt="drzwi-producent" />
             </figure>
             <div class="section__main__content">
-                <h4 class="section__main__content__header">
+                <h4 class="section__main__content__header section__main__content__header--second">
                     Wybór producenta drzwi Stolarstwo Marek Kęsek to dobra decyzja?
                 </h4>
 
@@ -398,7 +404,7 @@
             Zostaw kontakt do siebie, a my oddzwonimy
         </h3>
 
-        <div class="flex">
+        <div class="flex section__contact">
             <div class="contact__form">
                 <label>
                     Imię i nazwisko

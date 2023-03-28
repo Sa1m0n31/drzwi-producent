@@ -5,7 +5,10 @@ let currentReferencesSlide = 0;
 
 const referencesCarousel = new Siema({
     selector: '.references',
-    perPage: 2,
+    perPage: {
+        100: 1,
+        768: 2
+    },
     // draggable: false,
     loop: true,
     duration: 400
@@ -53,4 +56,12 @@ const changeReferencesDotsStyle = (n) => {
             item.style.visibility = 'hidden';
         }
     });
+}
+
+const openMenu = () => {
+
+}
+
+const closeMenu = () => {
+
 }
