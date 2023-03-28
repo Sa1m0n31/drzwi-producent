@@ -1,5 +1,7 @@
-const referencesDots = Array.from(document.querySelectorAll('.btn--dot'));
 const referencesDotsInner = Array.from(document.querySelectorAll('.btn--dot>span'));
+const mobileMenu = document.querySelector('.menuMobile');
+const mobileMenuInner = document.querySelector('.menuMobile__inner');
+const mobileMenuChildren = Array.from(document.querySelectorAll('.menuMobile__inner>*'));
 
 let currentReferencesSlide = 0;
 
@@ -59,9 +61,33 @@ const changeReferencesDotsStyle = (n) => {
 }
 
 const openMenu = () => {
+    mobileMenu.style.zIndex = '100';
+    mobileMenu.style.opacity = '1';
 
+    setTimeout(() => {
+        mobileMenuInner.style.transform = 'scaleX(1)';
+
+        setTimeout(() => {
+            mobileMenuChildren.forEach((item) => {
+               item.style.opacity = '1';
+            });
+        }, 200);
+    }, 200);
 }
 
 const closeMenu = () => {
+    mobileMenuChildren.forEach((item) => {
+        item.style.opacity = '0';
+    });
 
+    setTimeout(() => {
+        mobileMenuInner.style.transform = 'scaleX(0)';
+
+        setTimeout(() => {
+            mobileMenu.style.opacity = '0';
+            setTimeout(() => {
+                mobileMenu.style.zIndex = '-3';
+            }, 200);
+        }, 200);
+    }, 200);
 }
