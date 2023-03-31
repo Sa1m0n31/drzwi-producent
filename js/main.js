@@ -4,17 +4,20 @@ const mobileMenuInner = document.querySelector('.menuMobile__inner');
 const mobileMenuChildren = Array.from(document.querySelectorAll('.menuMobile__inner>*'));
 
 let currentReferencesSlide = 0;
+let referencesCarousel;
 
-const referencesCarousel = new Siema({
-    selector: '.references',
-    perPage: {
-        100: 1,
-        768: 2
-    },
-    // draggable: false,
-    loop: true,
-    duration: 400
-});
+if(document.querySelector('.references')) {
+    referencesCarousel = new Siema({
+        selector: '.references',
+        perPage: {
+            100: 1,
+            768: 2
+        },
+        // draggable: false,
+        loop: true,
+        duration: 400
+    });
+}
 
 const referencesNext = () => {
     referencesCarousel.next();
